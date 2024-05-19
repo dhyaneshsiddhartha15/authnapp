@@ -6,8 +6,7 @@ require("dotenv").config();
 
 exports.auth = (req,res, next) => {
     try{
-        //extract JWT token
-        //PENDING : other ways to fetch token
+        //extract JWT tokennn
 
         console.log("cookie" , req.cookies.token);
         console.log("body" , req.body.token);
@@ -70,7 +69,7 @@ exports.isAdmin = (req,res,next) => {
         if(req.user.role !== "Admin") {
             return res.status(401).json({
                 success:false,
-                message:'THis is a protected route for admin',
+                message:'This is a protected route for admin',
             });
         }
         next();
